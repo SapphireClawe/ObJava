@@ -4,5 +4,6 @@ class Ball {
   Ball(int x, int y) {
     this.x = x;
     this.y = y;
+    this.diameter = diameter;
   }
 }
