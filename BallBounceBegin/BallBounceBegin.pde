@@ -6,7 +6,13 @@ void setup() {
 }
 
 void draw () {
-  ball.step;
+  ball.step();
  background(0);
  ellipse(ball.x, ball.y, 25, 25);
+
+}
+
+void mouseClicked() {
+  ball.targetX = mouseX;
+  ball.targetY = mouseY;
 }
