@@ -1,15 +1,16 @@
 Ball ball = new Ball(250, 250, 25);
-
+Boolean start = false;
 void setup() {
-  size(500, 500);
+  size(501, 500);
   ellipseMode(CENTER);
+  screenSizeChecker();
 }
 
 void draw () {
   ball.step();
  background(0);
- ellipse(ball.getx(), ball.gety(), ball.getdiameter(), ball.getdiameter());
-
+ ellipse(ball.x, ball.y, 25, 25);
+startStop();
 }
 
 void mouseClicked() {
