@@ -1,5 +1,5 @@
 void screenSizeChecker() {
-  String fullSize = "Width=" + displayWidth + "; Height=" + displayHeight;
+  final String fullSize = "Width=" + displayWidth + "; Height=" + displayHeight;
 
   if (width > displayWidth) { 
     println ("ERROR: Change Pong Table size-width, it is too big."); 

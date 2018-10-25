@@ -3,14 +3,20 @@ class Star {
   private float y;
   private float radius;
   
-  public static int starCount = 1; 
-  public static int maxRadius = 20; 
+  private static int starCount = 50; 
+  private static int maxRadius = 20; 
+  
   public Star(float x, float y, float radius) {
     this.x = x;
     this.y = y;
     this.radius = radius;
   } 
-
+  public static int getStarCount() {
+    return starCount;
+  }
+  public static int getMaxRadius() {
+    return maxRadius;
+  }
   public float getX() {
     return x;
   }
