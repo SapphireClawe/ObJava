@@ -5,6 +5,7 @@ class Star {
   
   public static int starCount = 50; 
   public static int maxRadius = 20; 
+  
   public Star(float x, float y, float radius) {
     this.x = x;
     this.y = y;

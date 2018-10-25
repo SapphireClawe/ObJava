@@ -16,8 +16,8 @@ public void draw() {
   if (start==true) {
     
     background(0);
-    
-    ellipse(stars[1-Star.starCount].getX(), stars[1-Star.starCount].getY(), stars[1-Star.starCount].getRadius(), stars[1-Star.starCount].getRadius());
+    for (int i = 0; i < stars.length; i++) {
+    ellipse(stars[i].getX(), stars[i].getY(), stars[i].getRadius(), stars[i].getRadius());
     
   } 
 }
