@@ -1,33 +1,44 @@
-private Boolean start = false;
-private Star[] stars = new Star[Star.getStarCount()]; 
-Ball ball = new Ball(250, 250, 25);
+private Boolean startKeyboard = false;
+private Boolean startMouse = false;
+private Star[] stars = new Star[Star.starCount]; 
+
 public void setup() {
   size(500, 600);
   screenSizeChecker();
   ellipseMode(CENTER);
 
   createStars();
-  
+  for (int i = 0; i < stars.length; i++) {
+    stars[i].targetX = int (random (width) ); 
+    stars[i].targetY = int (random (height) );
+  }
+  println("Remember to press 's' to start the program");
 }
 
- public void draw () {
-   
-  startStop();
-    if (start==true) {
+public void draw () {
 
+  if (mousePressed == true) {
+    startMouse = true;
+  }
+
+  if (startMouse == true) {
     background(0);
-    for (int i = 0; i < stars.length; i++) {
-      ellipse(stars[i].getX(), stars[i].getY(), stars[i].getRadius(), stars[i].getRadius());
+    startStop();
+    if (startKeyboard==true) {
+      for (int i = 0; i < stars.length; i++) {
+        stars[i].step();
+        ellipse(stars[i].getX(), stars[i].getY(), stars[i].getRadius(), stars[i].getRadius());
+      }
     }
   }
-  ball.step();
- background(0);
- ellipse(ball.getx(), ball.gety(), ball.getdiameter(), ball.getdiameter());
-
 }
 
 public void mouseClicked() {
-  createStars();
-  ball.targetX = mouseX;
-  ball.targetY = mouseY;
+  if (startKeyboard == true) {
+    createStars();
+    for (int i = 0; i < stars.length; i++) {
+      stars[i].targetX = mouseX; 
+      stars[i].targetY = mouseY;
+    }
+  }
 }
